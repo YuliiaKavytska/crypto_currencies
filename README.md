@@ -88,7 +88,7 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 #### `main dependencies
-- For work with api - `axios`, `saga`, `react-chartjs-2`, `moment`, `styled-components`
+- `axios`, `saga`, `react-chartjs-2`, `moment`, `styled-components`
 
 Main ui framework - `antd`
 
