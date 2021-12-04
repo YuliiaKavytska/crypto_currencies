@@ -1,0 +1,124 @@
+.smile-range {
+  .noUi-horizontal {
+    height: 20px;
+  }
+
+  .noUi-connect {
+    background: linear-gradient(to left, #3b91de 0%, rgba(24, 145, 229, 0.31) 100%);
+  }
+
+  .noUi-connects {
+    border-radius: 10px;
+  }
+
+  .noUi-base {
+    padding: 3px;
+  }
+
+  .noUi-target {
+    border: 1px solid #d5d5db;
+    border-radius: 10px;
+  }
+
+  .noUi-handle::before,
+  .noUi-handle::after {
+    display: none;
+  }
+
+  .noUi-handle {
+    width: 47px;
+    height: 47px;
+    border: none;
+    box-shadow: none;
+    top: -15px;
+    right: -17px;
+  }
+
+  .i1 .noUi-handle {
+    background: url('../../../assets/images/range/1.svg') center 100%;
+    right: -40px;
+  }
+
+  .i2 .noUi-handle {
+    background: url('../../../assets/images/range/2.svg') center 100%;
+    right: -35px;
+  }
+
+  .i3 .noUi-handle {
+    background: url('../../../assets/images/range/3.svg') center 100%;
+    right: -30px;
+  }
+
+  .i4 .noUi-handle {
+    background: url('../../../assets/images/range/4.svg') center 100%;
+    right: -25px;
+  }
+
+  .i5 .noUi-handle {
+    background: url('../../../assets/images/range/5.svg') center 100%;
+    right: -22px;
+  }
+
+  .i6 .noUi-handle {
+    background: url('../../../assets/images/range/6.svg') center 100%;
+    right: -18px;
+  }
+
+  .i7 .noUi-handle {
+    background: url('../../../assets/images/range/7.svg') center 100%;
+    right: -11px;
+  }
+
+  .i8 .noUi-handle {
+    background: url('../../../assets/images/range/8.svg') center 100%;
+    right: -9px;
+  }
+
+  .i9 .noUi-handle {
+    background: url('../../../assets/images/range/9.svg') center 100%;
+    right: -4px;
+  }
+
+  .i10 .noUi-handle {
+    background: url('../../../assets/images/range/10.svg') center 100%;
+    right: -3px;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 0 15px;
+
+    span {
+      font-size: 14px;
+      line-height: 26 / 14 * 100%;
+      color: #919191;
+      cursor: pointer;
+    }
+  }
+
+  &__range-names {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+  }
+
+  &__name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+    border-radius: 10px;
+    padding: 9px 16px;
+    border: 1px solid #d5d5db;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+}
