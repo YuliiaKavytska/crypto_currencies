@@ -33,13 +33,13 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/YuliiaKavytska/ReactNative_GitHub.git
+$ git clone https://github.com/YuliiaKavytska/crypto_currencies
 # Go into the repository
-$ cd ReactNative_GitHub
+$ cd crypto_currencies
 # Install dependencies
-$ npm install
+$ yarn
 # Run the app
-$ npm start
+$ yarn start
 ```
 
 ## Credits
