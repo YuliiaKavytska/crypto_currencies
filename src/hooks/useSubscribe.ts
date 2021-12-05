@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 import { notification } from 'antd'
 import { socket } from 'api'
@@ -8,7 +8,6 @@ import { getHelloMessage } from 'utils/helpers'
 
 export const useSubscribe = (selectedId: string | undefined) => {
   const { getLastInfo } = useActions()
-  const selectedInterval = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
     if (!selectedId) {
@@ -17,17 +16,17 @@ export const useSubscribe = (selectedId: string | undefined) => {
 
     socket.send(getHelloMessage(selectedId))
 
-    const clear = () => selectedInterval.current && clearInterval(selectedInterval.current)
-    clear()
-    const onSubscribe = () => getLastInfo(selectedId, clear)
-
-    const polingInterval = setInterval(onSubscribe, 10000)
-    selectedInterval.current = polingInterval
+    // I decided to use a long polling because free API kay doesn't have an access to current quotes with WebSockets
+    const infoInterval: ReturnType<typeof setInterval> = setInterval(() => {
+      getLastInfo(selectedId, () => {
+        clearInterval(infoInterval)
+      })
+    }, 10000)
 
     return () => {
-      clear()
+      clearInterval(infoInterval)
     }
-  }, [selectedId])
+  }, [getLastInfo, selectedId])
 
   socket.onopen = () => {
     notification.info({ message: 'Connected using websocket' })

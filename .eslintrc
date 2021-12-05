@@ -1,8 +1,14 @@
 {
   "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
   "env": {
     "browser": true,
-    "es2021": true
+    "node": true,
+    "es6": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
@@ -14,29 +20,30 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "standard",
-    "plugin:prettier/recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2021,
-    "sourceType": "module"
-  },
   "settings": {
     "react": {
       "version": "detect"
     },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
     "import/resolver": {
-      "typescript": {}
+      "typescript": {
+        "alwaysTryTypes": true
+      }
     }
   },
-  "plugins": ["react", "@typescript-eslint", "simple-import-sort", "prettier"],
+  "plugins": ["react", "import", "react-hooks", "simple-import-sort", "@typescript-eslint"],
   "rules": {
+    "@typescript-eslint/no-explicit-any": 0,
     "import/no-named-as-default-member": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/interface-name-prefix": [0, "always"],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
@@ -64,7 +71,7 @@
     "prefer-const": "error",
     "react/prop-types": 0,
     "react/no-unescaped-entities": 0,
-    "no-unused-vars": 1,
+    "no-unused-vars": 0,
     "camelcase": 0,
     "comma-dangle": [
       "error",
@@ -74,21 +81,6 @@
         "imports": "never",
         "exports": "never",
         "functions": "never"
-      }
-    ],
-    "prettier/prettier": [
-      "warn",
-      {
-        "printWidth": 100,
-        "semi": false,
-        "jsxSingleQuote": true,
-        "singleQuote": true,
-        "useTabs": false,
-        "tabWidth": 2,
-        "jsxBracketSameLine": false,
-        "parser": "flow",
-        "endOfLine": "auto",
-        "trailingComma": "none"
       }
     ],
     "no-alert": "error",

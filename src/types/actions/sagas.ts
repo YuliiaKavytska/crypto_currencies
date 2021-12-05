@@ -1,30 +1,30 @@
 import { defaultCallback, ICurrency } from 'types/common'
 
-export enum sagasAppTypes {
+export enum SagasAppTypes {
   INITIALIZE_APP = 'APP/INITIALIZE_APP'
 }
 
-export enum sagasCurrencyTypes {
+export enum SagasCurrencyTypes {
   CURRENCY_SUBSCRIBE = 'CURRENCIES/CURRENCY_SUBSCRIBE',
   CURRENCY_HISTORY = 'CURRENCIES/CURRENCY_HISTORY',
   GET_LAST_INFO = 'CURRENCIES/GET_LAST_INFO'
 }
 
 export interface IInitializeApp {
-  type: sagasAppTypes.INITIALIZE_APP
+  type: SagasAppTypes.INITIALIZE_APP
 }
 
 export interface ISubscribe {
-  type: sagasCurrencyTypes.CURRENCY_SUBSCRIBE
+  type: SagasCurrencyTypes.CURRENCY_SUBSCRIBE
   payload: { currency: ICurrency }
 }
 
 export interface IGetCurrencyHistory {
-  type: sagasCurrencyTypes.CURRENCY_HISTORY
+  type: SagasCurrencyTypes.CURRENCY_HISTORY
   payload: { currency: string }
 }
 
 export interface IGetLastInfo {
-  type: sagasCurrencyTypes.GET_LAST_INFO
+  type: SagasCurrencyTypes.GET_LAST_INFO
   payload: { currencyID: string; callback: defaultCallback }
 }

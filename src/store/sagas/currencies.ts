@@ -9,7 +9,7 @@ import { checkError } from 'utils/helpers'
 export function* getHistorical(currency: string): Generator<unknown, void, Array<IHistoricItem>> {
   try {
     yield put(storeCurrenciesActions.setLoading(true))
-    const history = yield call(currencyApi.getHistorical, currency)
+    const history = yield call(currencyApi.getQuoteHistory, currency)
     yield put(storeCurrenciesActions.setHistorical(history))
   } catch (err) {
     checkError(err)
@@ -27,11 +27,9 @@ export function* onCurrencySubscribe(action: ISubscribe): Generator {
   }
 }
 
-export function* getLastCurrencyInfo(
-  action: IGetLastInfo
-): Generator<unknown, void, Array<IInfoItem>> {
+export function* getLastCurrencyInfo(action: IGetLastInfo): Generator<unknown, void, Array<IInfoItem>> {
   try {
-    const info = yield call(currencyApi.getLastInfo, action.payload.currencyID)
+    const info = yield call(currencyApi.getQuoteCurrentData, action.payload.currencyID)
     yield put(storeCurrenciesActions.setSelectedInfo(info[0]))
   } catch (err) {
     action.payload.callback()

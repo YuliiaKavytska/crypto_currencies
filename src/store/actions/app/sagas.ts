@@ -1,8 +1,8 @@
-import { IInitializeApp, sagasAppTypes } from 'types/actions/sagas'
+import { IInitializeApp, SagasAppTypes } from 'types/actions/sagas'
 
 export const sagaAppActions = {
   initializeApp: (): IInitializeApp =>
     ({
-      type: sagasAppTypes.INITIALIZE_APP
+      type: SagasAppTypes.INITIALIZE_APP
     } as const)
 }

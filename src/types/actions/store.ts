@@ -1,8 +1,8 @@
-export enum storeAppTypes {
+export enum StoreAppTypes {
   INITIALIZED_SUCCESS = 'APP/INITIALIZED_SUCCESS'
 }
 
-export enum storeCurrenciesTypes {
+export enum StoreCurrenciesTypes {
   SET_CURRENCIES_LIST = 'CURRENCIES/SET_CURRENCIES_LIST',
   SET_SELECTED_CURRENCY = 'CURRENCIES/SET_SELECTED_CURRENCY',
   SET_SELECTED_INFO = 'CURRENCIES/SET_SELECTED_INFO',
@@ -11,5 +11,5 @@ export enum storeCurrenciesTypes {
 }
 
 export interface IInitSuccess {
-  type: storeAppTypes.INITIALIZED_SUCCESS
+  type: StoreAppTypes.INITIALIZED_SUCCESS
 }

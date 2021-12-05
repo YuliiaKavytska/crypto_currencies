@@ -13,8 +13,13 @@ export const SymbolName = styled.div`
   .ant-select {
     width: 100%;
   }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-radius: 10px;
+  }
 `
 
 export const CustomButton = styled(Button)`
   font-weight: 700;
+  border-radius: 10px;
 `

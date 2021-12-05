@@ -13,10 +13,10 @@ function App() {
 
   useEffect(() => {
     initializeApp()
-  }, [])
+  }, [initializeApp])
 
   return (
-    <Spin spinning={!initialized} size='large' tip='Loading...'>
+    <Spin spinning={!initialized} size="large" tip="Loading...">
       <Home />
     </Spin>
   )

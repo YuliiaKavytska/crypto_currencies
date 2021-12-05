@@ -13,12 +13,13 @@
   <a href="#you-may-also-like">Related</a>
 </p>
 
-
 ## About the aplication
+
 Data provider for real time and historical prices is https://CoinAPi.io .
 For the historical prices used REST API, and for the real time data used long polling with REST API.
 
 ## Screens
+
 <p align="center">
     <img src="https://i.ibb.co/6HqYTLy/2021-12-04-18-03-10.png" width="700"/>
     <img src="https://i.ibb.co/PZc5xdD/2021-12-04-18-03-02.png" width="700"/>
@@ -47,15 +48,16 @@ $ yarn start
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 node - v16.1.0
-npm  - v7.11.2
+npm - v7.11.2
 yarn - v1.22.10
 root
+
 ```
 public (text, index.html)
 src
 - api
 - assets
-- components 
+- components
 - hooks
 - pages
 - store (actions, reducers, sagas, selectors)
@@ -88,6 +90,7 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 #### `main dependencies
+
 - `axios`, `saga`, `react-chartjs-2`, `moment`, `styled-components`
 
 Main ui framework - `antd`
