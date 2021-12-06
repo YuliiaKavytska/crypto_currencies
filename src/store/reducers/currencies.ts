@@ -1,12 +1,13 @@
 import { storeCurrenciesActions } from 'store/actions/currencies/store'
 import { StoreCurrenciesTypes } from 'types/actions/store'
-import { ICurrency, IHistoricItem, IInfoItem, inferActionTypes } from 'types/common'
+import { ICurrency, IHistoricItem, IInfoItem, inferActionTypes, ITrade } from 'types/common'
 
 const initialState = {
   loading: false,
   cryptoList: [] as Array<ICurrency>,
   selectedCurrency: null as null | ICurrency,
   selectedInfo: null as null | IInfoItem,
+  tradeInfo: null as null | ITrade,
   history: [] as Array<IHistoricItem>
 }
 
@@ -35,6 +36,11 @@ export const currencies = (state = initialState, action: actionTypes): currencie
       return {
         ...state,
         selectedInfo: action.payload.info
+      }
+    case StoreCurrenciesTypes.SET_TRADE_INFO:
+      return {
+        ...state,
+        tradeInfo: action.payload.tradeInfo
       }
     case StoreCurrenciesTypes.SET_HISTORY:
       return {

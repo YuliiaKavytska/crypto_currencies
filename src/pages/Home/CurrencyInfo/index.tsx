@@ -1,20 +1,31 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 
 import moment from 'moment'
-import { getSelected, getSelectedInfo } from 'store/selectors'
+import { getSelected } from 'store/selectors'
 
 import { CardData, CardInfo, Title } from 'pages/Home/styles'
 
 import { InfoCol, InfoTitle, InfoValue } from './styles'
 
-const CurrencyInfo: FC = () => {
+interface ICurrencyInfo<T> {
+  selectedInfo: T
+  title: string
+}
+
+interface baseInfo {
+  time_exchange: string
+  ask_price: number
+}
+
+function CurrencyInfo<T extends baseInfo | null>({ selectedInfo, title }: ICurrencyInfo<T>) {
   const selected = useSelector(getSelected)
-  const selectedInfo = useSelector(getSelectedInfo)
 
   return (
     <CardData>
-      <Title>Market data {selected && `for ${selected.asset_id_base} / ${selected.asset_id_quote}`}</Title>
+      <Title>
+        {title} {selected && `for ${selected.asset_id_base} / ${selected.asset_id_quote}`}
+      </Title>
       <CardInfo>
         <InfoCol>
           <InfoTitle>Symbol</InfoTitle>

@@ -46,3 +46,15 @@ export interface IInfoItem {
   bid_size: number
   time_coinapi: string
 }
+
+export interface ITrade {
+  ask_price: number
+  sequence: number
+  size: number
+  symbol_id: string
+  taker_side: string
+  time_coinapi: string
+  time_exchange: string
+  type: string
+  uuid: string
+}

@@ -11,7 +11,7 @@ import {
   Title as ChartTitle,
   Tooltip
 } from 'chart.js'
-import { getSelected } from 'store/selectors'
+import { getSelected, getSelectedInfo, getSelectedTrade } from 'store/selectors'
 
 import { useSubscribe } from 'hooks/useSubscribe'
 import SelectForm from 'pages/Home/SelectForm'
@@ -24,14 +24,17 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ChartTit
 
 const Home = () => {
   const selected = useSelector(getSelected)
+  const selectedInfo = useSelector(getSelectedInfo)
+  const selectedTrade = useSelector(getSelectedTrade)
 
-  useSubscribe(selected?.symbol_id)
+  useSubscribe(selected)
 
   return (
     <Wrapper>
       <Card>
         <SelectForm />
-        <CurrencyInfo />
+        <CurrencyInfo selectedInfo={selectedInfo} title="Quote info" />
+        <CurrencyInfo selectedInfo={selectedTrade} title="Trade data" />
         <ChartingData />
       </Card>
     </Wrapper>

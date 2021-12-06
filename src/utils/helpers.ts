@@ -3,13 +3,17 @@ import { AxiosError } from 'axios'
 import moment from 'moment'
 import { IHistoricItem } from 'types/common'
 
-export const getHelloMessage = (symbolId: string) => {
+import { API_KEY } from 'utils/consts'
+
+export const getHelloMessage = (symbolId: string, assetId: string, exchangeId: string) => {
   return JSON.stringify({
     type: 'hello',
-    apikey: '957F479E-D838-432F-ABFC-49E4E8EA6725',
-    heartbeat: true,
-    subscribe_data_type: ['quote'],
-    subscribe_filter_symbol_id: [`${symbolId}`]
+    apikey: API_KEY,
+    heartbeat: false,
+    subscribe_data_type: ['trade'],
+    subscribe_filter_symbol_id: [symbolId],
+    subscribe_filter_asset_id: [assetId],
+    subscribe_filter_exchange_id: [exchangeId]
   })
 }
 
