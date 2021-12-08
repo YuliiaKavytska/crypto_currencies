@@ -16,7 +16,7 @@
 ## About the aplication
 
 Data provider for real time and historical prices is https://CoinAPi.io .
-For the historical prices used REST API, and for the real time data used long polling with REST API.
+For the historical prices used REST API, and for the real time data used long polling with REST API and WebSockets.
 
 ## Screens
 
